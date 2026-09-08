@@ -1,0 +1,8 @@
+[Unit]
+Description=EvaBot OpenRouter Registry Sync (free-model drift probe)
+
+[Service]
+Type=oneshot
+User=evabot
+WorkingDirectory=/var/www/evabot-backend
+ExecStart=/usr/bin/env bash -lc 'cd /var/www/evabot-backend && npx tsx scripts/sync-openrouter-registry.ts >> logs/registry-sync.log 2>&1'

@@ -1,0 +1,16 @@
+[Unit]
+Description=EvaBot Face 3D Static Server (port 8093)
+After=network.target
+
+[Service]
+Type=simple
+User=evabot
+WorkingDirectory=/home/evabot/Desktop/eva-face
+ExecStart=/usr/bin/python3 -m http.server 8093 -d /home/evabot/Desktop/eva-face -b 127.0.0.1
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/www/evabot-backend/logs/face-server.log
+StandardError=append:/var/www/evabot-backend/logs/face-server.log
+
+[Install]
+WantedBy=multi-user.target

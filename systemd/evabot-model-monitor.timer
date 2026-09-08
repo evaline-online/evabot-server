@@ -1,0 +1,9 @@
+[Unit]
+Description=Run EvaBot model monitor every 12 hours
+
+[Timer]
+OnCalendar=*-*-* 06,18:30:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

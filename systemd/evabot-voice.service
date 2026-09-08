@@ -1,0 +1,18 @@
+[Unit]
+Description=EvaBot Voice/Edge FastAPI Backend (port 8000)
+After=network.target
+
+[Service]
+Type=simple
+User=evabot
+WorkingDirectory=/var/www/evabot-backend/backend
+Environment=PORT=8000
+Environment=HOST=127.0.0.1
+ExecStart=/var/www/evabot-backend/backend/venv/bin/python run.py
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/www/evabot-backend/logs/voice-backend.log
+StandardError=append:/var/www/evabot-backend/logs/voice-backend.log
+
+[Install]
+WantedBy=multi-user.target

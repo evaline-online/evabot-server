@@ -1,0 +1,10 @@
+[Unit]
+Description=EvaBot Model Monitor (top free/paid coding models)
+
+[Service]
+Type=oneshot
+User=evabot
+WorkingDirectory=/var/www/evabot-backend
+ExecStart=/usr/bin/python3 /var/www/evabot-backend/scripts/model-monitor.py
+StandardOutput=append:/var/www/evabot-backend/logs/model-monitor.log
+StandardError=append:/var/www/evabot-backend/logs/model-monitor.log
